@@ -143,7 +143,7 @@ export default function renewAccounts (cb) {
 }
 
 
-function registerNewAccount (cb) {
+function registerNewAccounts (cb) {
   createPassword(
     () => createTenMinuteMail(
       () => registerNewAccount(
