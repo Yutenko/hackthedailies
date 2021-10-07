@@ -53,7 +53,7 @@ async function createTenMinuteMail(cb) {
   cb()
 }
 
-async function registerNewAccount(cb) {
+async function registerNewAccountViaBZ(cb) {
     if (TMM && PASSWORD && TMM_TOKEN) {
       const page = await browser.newPage();
       await page.goto(BZ_REGISTER_MAIL_SITE);
@@ -143,10 +143,10 @@ export default function renewAccounts (cb) {
 }
 
 
-function registerNewAccounts (cb) {
+function registerNewAccount (cb) {
   createPassword(
     () => createTenMinuteMail(
-      () => registerNewAccount(
+      () => registerNewAccountViaBZ(
         () => confirmEmail(
           () => {
             cb({
